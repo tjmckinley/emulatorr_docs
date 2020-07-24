@@ -206,7 +206,7 @@ Indeed, though you won't see this answer unless `renderSol = TRUE`...
 
 ### Tabbed boxed environments
 
-Originally developed to put base R and `tidyverse` solutions side-by-side, using a `multCode = T` option to the solution box. Here the two tabs are separated by four consecutive hashes: `####`, and the `titles` option gives the tab titles (these can be set globally if preferred) e.g.
+Originally developed to put base R and `tidyverse` solutions side-by-side, using a `multCode = TRUE` option to the solution box. Here the two tabs are separated by four consecutive hashes: `####`, and the `titles` option gives the tab titles (these can be set globally if preferred) e.g.
 
 ```{r, include = F}
 library(tidyverse)
@@ -218,7 +218,7 @@ library(tidyverse)
 Filter the `iris` data by `Species == "setosa"` and find the mean `Petal.Length`.
 ```
 
-```{solution, multCode = T, titles = c("Base R", "tidyverse")}`r ''`
+```{solution, multCode = TRUE, titles = c("Base R", "tidyverse")}`r ''`
 
 ``{r}
 ## base R solution
@@ -246,7 +246,7 @@ will typeset to:
 Filter the `iris` data by `Species == "setosa"` and find the mean `Petal.Length`.
 ```
 
-```{solution, multCode = T, titles = c("Base R", "tidyverse")}
+```{solution, multCode = TRUE, titles = c("Base R", "tidyverse")}
 
 ``{r}
 ## base R solution

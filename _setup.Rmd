@@ -1,8 +1,8 @@
-```{r include = FALSE, purl = F, cache = F}
+```{r include = FALSE, purl = FALSE, cache = FALSE}
 library(knitr)
 
 ## set knitr options
-opts_chunk$set(cache = F, tidy.opts = list(width.cutoff = 55), tidy = F, fig.align = "center", fig.width = 5, fig.height = 5, multCode = F, renderTask = T, renderSol = T)
+opts_chunk$set(cache = FALSE, tidy.opts = list(width.cutoff = 55), tidy = FALSE, fig.align = "center", fig.width = 5, fig.height = 5, multCode = FALSE, renderTask = TRUE, renderSol = TRUE)
 
 ## variables to help save latex answers for appendix
 taskCtr <- 0
@@ -65,7 +65,7 @@ knit_engines$set(solution = function(options) {
                 if(opts_knit$get("rmarkdown.pandoc.to") != "latex") {
                     return(knit_child(text = x))
                 } else {
-                    # opts_chunk$set(tidy = T, tidy.opts = list(width.cutoff = 20))
+                    # opts_chunk$set(tidy = TRUE, tidy.opts = list(width.cutoff = 20))
                     x <- knit_child(text = x)
                     return(x)
                 }
@@ -114,7 +114,7 @@ knit_engines$set(multCode = function(options) {
         if(opts_knit$get("rmarkdown.pandoc.to") != "latex") {
             return(knit_child(text = x))
         } else {
-            # opts_chunk$set(tidy = T, tidy.opts = list(width.cutoff = 20))
+            # opts_chunk$set(tidy = TRUE, tidy.opts = list(width.cutoff = 20))
             x <- knit_child(text = x)
             return(x)
         }
