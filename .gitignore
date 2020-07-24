@@ -4,5 +4,6 @@
 .Rproj.user
 
 # ignore compiled files
-docs/
+docs/*
+!docs/_version.js
 _bookdown*

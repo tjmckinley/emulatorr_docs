@@ -9,6 +9,9 @@ output:
     bookdown::gitbook:
         config:
             sharing: null
+            toc:
+                before: |
+                    <script type="text/javascript" src="docs/_version.js"></script>
         css: 'style.css'
         includes:
             in_header: _toggle.html
