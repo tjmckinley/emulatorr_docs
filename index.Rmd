@@ -11,7 +11,7 @@ output:
             sharing: null
             toc:
                 before: |
-                    <script type="text/javascript" src="docs/_version.js"></script>
+                    <div id="version_box"></div>
         css: 'style.css'
         includes:
             in_header: _toggle.html

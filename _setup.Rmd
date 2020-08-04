@@ -19,16 +19,11 @@ dir.create(paste0("docs/docs_", gitbranch), showWarnings = FALSE)
 docVersions <- list.dirs("docs", recursive = FALSE)
 docVersions <- gsub("docs/docs_", "", docVersions)
 docVersions <- sapply(docVersions, function(x) {
-    paste0("document.writeln(\"<option value=\\\"../docs_", x, "/index.html\\\">", x, "</option>\");")
+    paste0("[\"", x, "\", \"../docs_", x, "/\"]")
 })
-versions <- readLines("docs/_version.js")
-version_ind <- grep("<option", versions)
-versions <- c(
-    versions[1:(version_ind[1] - 1)],
-    docVersions,
-    versions[(max(version_ind) + 1):length(versions)]
-)
-writeLines(versions, "docs/_version.js")
+docVersions[-length(docVersions)] <- paste0(docVersions[-length(docVersions)], ",")
+docVersions <- c("[", docVersions, "]")
+writeLines(docVersions, "docs/_versions.json")
 
 ## variables to help save latex answers for appendix
 taskCtr <- 0
