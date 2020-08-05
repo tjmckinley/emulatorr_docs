@@ -19,7 +19,7 @@ dir.create(paste0("docs/docs_", gitbranch), showWarnings = FALSE)
 docVersions <- list.dirs("docs", recursive = FALSE)
 docVersions <- gsub("docs/docs_", "", docVersions)
 docVersions <- sapply(docVersions, function(x) {
-    paste0("[\"", x, "\", \"../docs_", x, "/\"]")
+    paste0("[\"", x, "\", \"docs_", x, "\"]")
 })
 docVersions[-length(docVersions)] <- paste0(docVersions[-length(docVersions)], ",")
 docVersions <- c("[", docVersions, "]")

@@ -2,9 +2,10 @@
 // adapted from MetaWards source code
 // https://metawards.org/
 
-function choose_version(url) {
-    var url = document.getElementById('versions').value;
-    window.location = url;
+function choose_version(value) {
+    var parts = window.location.href.split("docs_");
+    var s = parts[0] + value + "index.html";
+    window.location = s;
 }
 
 function fill_versions() {
@@ -21,9 +22,8 @@ function fill_versions() {
 
             for (var i in versions) {
                 var version = versions[i][0];
-                var path = versions[i][1];
-                var temppath = path.slice("/").slice(-2)[0]
-                if (href.includes(temppath)) {
+                var path = versions[i][1] + "/";
+                if (href.includes(path)) {
                     // we are looking at this version now
                     s += `<option value="${path}" selected>${version}</option>`;
                 } else {
